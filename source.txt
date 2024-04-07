@@ -1,0 +1,7 @@
+TRIE: https://drive.google.com/file/d/1ENjmt9TSWbx9wDTZJI04bjigzzcMd_rr/view
+BST: https://drive.google.com/file/d/16Aeyjzhil5RInO6r8InAEN8w4kcnhHAi/view
+FLOYD: https://drive.google.com/file/d/13nHtyAqYPD9lzH58MJgf7MYFq0q425UK/view
+FORD: https://l.facebook.com/l.php?u=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1v4BSJjQwaWZ-7WKlK_sAl9XxSpHriaVH%2Fview%3Ffbclid%3DIwAR0w7umE4oLBc4PoL00rHnGWhhjjqfRO2rNl655Ird1Gq-gYTcpIw5D4vaI_aem_AUncmQfe_incTDr8-qExVNBU9biFpLwYJw9-NC6SnG6s_0t7_aTq4FA5UWD1pZjRziwkw_QYImN7WNgYim9gRM9y&h=AT2h5wwIY9hku8ZfZbjFCdmo5J5wIUlxqtZVgRsdq6AF1ov2CPiSgphJVwQvAwvO6TBI-sDrI_KbRGR2MwPKjYARK6wTDR21qRcQKmYEDbT5Su1nt_J4zSgiWJmoqyYAWqa4B82DGIjsqzO_XUBu&__tn__=%2CmH-R&c[0]=AT0dNNDpwMDq5gAFcrq6KReC_SbbJM_QbGyJh-U-teczergtKAwNyoE5WjGABdnXSrGJ1fbn_0JiAeFLvp4hETqopeJ98u03cq1qpakv4iaykNfLzG6Q0bBEK4Ueoivakg5ApHQj7ri2gBKW4xhB4CsF_Z_s2J_kO7FUO__Ua6dOxV0mT7YUIsc8vRkRSe6EtN8xp88iDIGGPppo73zdkWU
+HEAP: https://drive.google.com/file/d/1a3G5NRzCNeiCqAE--Se0RD729_poOFa1/view
+
+FIX: https://www.dropbox.com/scl/fo/wfyotl1cqtr6ay6474t40/h?rlkey=qqxqnj0fo6ajwrktbo6yzyfbf&dl=0
