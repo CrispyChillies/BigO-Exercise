@@ -36,6 +36,22 @@ def findTrie(li, str):
     res = findWord(root, str)
     return res
 
+def removeWord(root, s, level, len):
+    if root == None:
+        return False
+    if level == len:
+        if root.countWord > 0:
+            root.countWord -= 1
+            return True
+        return False
+    ch = s[level]
+    if ch not in root.child:
+        return False
+    flag = removeWord(root.child[ch], s, level + 1, len)
+    if flag == True and root.child[ch].isalpha() == False and root.child[ch].isEmpty() == True:
+        del root.child[ch]
+    return flag
+
 T = int(input())
 l = []
 q = Queue()
@@ -52,9 +68,10 @@ for _ in range(T):
     while not q.empty():
         check = q.get()
         res = findTrie(l,check)
+    
         if res != 1:
             checkTrie = True    
-            break
+            break 
     
     if checkTrie:
          print(f"Case {cnt}: NO")
