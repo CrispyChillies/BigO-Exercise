@@ -1,70 +1,72 @@
-INF = 1e9
+import itertools
 
-class Node:
-    def __init__(self) -> None:
-        self.maxValue = -1
-        self.child = dict()
-        self.countWord = 0
+ALPHABET_SIZE = 26
+indexs = 0
+class TrieNode:
+	# constructor
+	def __init__(self):
+		self.isLeaf = False
+		self.children = [None]*ALPHABET_SIZE    
 
-def addword(root, s):
-    temp = root
-    for ch in s:
-        if ch not in temp.child:
-            temp.child[ch] = Node()
-        temp = temp.child[ch]
-        temp.countWord += 1 
+def insert(key, root):
+	pCrawl = root
+	for level in range(len(key)):
+		index = ord(key[level]) - ord('A')
+		if pCrawl.children[index] == None:
+			pCrawl.children[index] = TrieNode()
+		pCrawl = pCrawl.children[index]
+	pCrawl.isLeaf = True
 
+def constructTrie(arr, n, root):
+	for i in range(n):
+		insert(arr[i], root)
 
-def findWord(root, s):
-    temp = root
-    for ch in s:
-        if ch not in temp.child:
-            return 0
-        temp = temp.child[ch]
-    return temp.countWord 
+def countChildren(node):
+	count = 0
+	for i in range(ALPHABET_SIZE):
+		if node.children[i] != None:
+			count +=1
+			# Keeping track of diversion in the trie
+			global indexs
+			indexs = i
+	return count
+	
 
-def printWord(root, s):
-    #if root.isalpha():
-    #    print(s)
-    for ch in root.child:
-        printWord(root.child[ch], s + ch)
+def walkTrie(root):
+	pCrawl = root
+	prefix = ""
+	while(countChildren(pCrawl) == 1 and pCrawl.isLeaf == False):
+		pCrawl = pCrawl.children[indexs]
+		prefix += chr(97 + indexs)
+	return prefix or ""
 
-def findLongest(s):
-    root = Node()
-    minlength = INF
-    minStr = ""
-    for word in s:
-        if len(word) < minlength:
-            minlength = len(word)
-            minStr = word
-        addword(root, word)
+def commonPrefix(arr, n, root):
+	constructTrie(arr, n, root)
+	return walkTrie(root)
 
-    checkStr = ""
-    checkFind = 0
-    result = -INF
-
-    for c in minStr:
-        checkStr += c
-        checkFind = findWord(root, checkStr)
-        # print(checkFind)
-        if checkFind != 0:
-            result = max(result, len(checkStr) * checkFind)
-
+def findLongestPrefixSubset(arr, n):
+    result = -1
+    for i in range(n):
+        combinations = list(itertools.combinations(arr, i + 1))
+        for combination in combinations:
+            root = TrieNode()
+            result = max(result, len(commonPrefix(combination,i + 1, root)) * len(combination))
+    
     return result
 
-l = []
-
 T = int(input())
+arr = []
 cnt = 1
 for _ in range(T):
-    n = int(input())
-    for _ in range(n):
-        q = input()
-        l.append(q)
-    result = findLongest(l)
-    print(f"Case {cnt}: {result}")
-    l.clear()
-    cnt += 1
+	n = int(input())
+	for _ in range(n):
+		q = input()
+		arr.append(q)
+	res = findLongestPrefixSubset(arr,len(arr))
+	print(f"Case {cnt}: {res}")
+	arr.clear()
+	cnt += 1
+
 
 
 
