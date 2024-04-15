@@ -51,6 +51,7 @@ if __name__ == '__main__':
             u,v,w = map(int, input().split())
             graph[u - 1].append(Node(v - 1, w))
             graph[v - 1].append(Node(u - 1, w))
+        
         prims(0)
 
         totalCost = 0

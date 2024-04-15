@@ -51,5 +51,5 @@ for _ in range(T):
          print(f"Case {cnt}: NO")
     else:
          print(f"Case {cnt}: YES")
-    
+    l.clear()
     cnt += 1

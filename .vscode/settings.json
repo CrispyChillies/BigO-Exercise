@@ -2,5 +2,6 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "*.tcc": "cpp"
-    }
+    },
+    "python.REPL.enableREPLSmartSend": false
 }
