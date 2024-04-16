@@ -8,7 +8,7 @@ def union(u,v):
     pu = find(u)
     pv = find(v)
 
-    if pu == pv: # This line is neccessary
+    if pu == pv: 
         return 
     if ranks[pu] < ranks[pv]:
         parent[pu] = pv
